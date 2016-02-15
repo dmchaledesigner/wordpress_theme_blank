@@ -283,3 +283,36 @@ function starkers_posted_in() {
 	);
 }
 endif;
+
+
+
+
+
+
+
+// Registering JS Files
+
+    function myScripts()
+{
+
+	 // Deregister WordPress jQuery.
+     //wp_deregister_script( 'jquery' );
+
+     // Register Google CDN jQuery.
+    wp_register_script( 'jquery-google', ("https://code.jquery.com/jquery-1.10.2.min.js"), array(), '1.10.2', true);
+   
+    // Register scripts individually
+    wp_register_script( 'jquery', get_template_directory_uri() . '/js/jquery-1.8.3.min.js' );
+    wp_register_script( 'modernizer', get_template_directory_uri() . '/js/modernizr-1.6.min.js' );
+
+ 
+    // Enqueue scripts individually
+    wp_enqueue_script( 'jquery' );
+    wp_enqueue_script( 'modernizer' );
+}
+
+
+add_action( 'wp_enqueue_scripts', 'myScripts' );
+
+
+
