@@ -1,1 +1,13 @@
-alert("hi there");
+$( document ).ready(function() {
+
+
+
+
+
+
+
+
+
+
+
+}); // close window loading
