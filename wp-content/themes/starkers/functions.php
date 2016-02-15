@@ -287,6 +287,37 @@ endif;
 
 
 
+// Registering CSS Files
+
+    function myStyles()
+{
+
+	
+
+    // Register styles individually
+        wp_enqueue_style( 'reset', get_template_directory_uri() . '/css/reset.css' );
+        wp_enqueue_style( 'explorer', get_template_directory_uri() . '/css/ie.css' );
+        wp_enqueue_style( 'fontawsome', get_template_directory_uri() . '/css/fonts.css' );
+    	wp_enqueue_style( 'style', get_template_directory_uri() . '/css/custom_style.css' );
+
+  
+
+ 
+    // Enqueue styles individually
+   	wp_enqueue_script( 'reset' );
+   	wp_enqueue_script( 'explorer' );
+    wp_enqueue_script( 'fontawsome' );
+    wp_enqueue_script( 'style' );
+    
+}
+
+
+add_action( 'wp_enqueue_scripts', 'myStyles' );
+
+
+
+
+
 
 
 
@@ -304,11 +335,14 @@ endif;
     // Register scripts individually
     wp_register_script( 'jquery', get_template_directory_uri() . '/js/jquery-1.8.3.min.js' );
     wp_register_script( 'modernizer', get_template_directory_uri() . '/js/modernizr-1.6.min.js' );
+    wp_register_script( 'myscripts', get_template_directory_uri() . '/js/myscripts.js' );
+
 
  
     // Enqueue scripts individually
     wp_enqueue_script( 'jquery' );
     wp_enqueue_script( 'modernizer' );
+    wp_enqueue_script( 'myscripts' );
 }
 
 
