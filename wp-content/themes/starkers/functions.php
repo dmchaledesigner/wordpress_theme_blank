@@ -297,6 +297,39 @@ remove_action( 'admin_notices', 'update_nag', 3 );
 }
 
 
+
+
+
+/*---------------------
+ Hide dashboard widgets.
+ ---------------------*/
+
+function custom_hide_dashboard_widgets() {
+
+    global $wp_meta_boxes;
+
+    // Today widget.
+    unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_right_now'] );
+    // Last comments.
+    unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments'] );
+    // Incoming links.
+    unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links'] );
+    // Plugins.
+    unset( $wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins'] );
+    // WordPress blog.
+    unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_primary'] );
+    // WordPress news.
+    unset( $wp_meta_boxes['dashboard']['side']['core']['dashboard_secondary'] );
+
+}
+add_action( 'wp_dashboard_setup', 'custom_hide_dashboard_widgets' );
+
+
+
+
+
+
+
 /*---------------------
  Unregister default widgets.
  ------------------------*/
