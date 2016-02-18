@@ -357,6 +357,19 @@ add_action( 'widgets_init', 'custom_unregister_default_widgets' );
 
 
 
+// Enqueue Google Fonts
+
+function myWebFonts() {
+  wp_enqueue_style('googleFonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
+}
+
+add_action('wp_enqueue_scripts', 'myWebFonts');
+
+
+
+
+
+
 // Registering CSS Files
 
     function myStyles()
